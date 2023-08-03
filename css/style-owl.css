@@ -1,0 +1,84 @@
+/*Owlページ　iPhoneおよび共通設定*/
+/*mainブロックの設定*/
+.main {
+    margin-top: 100px;
+}
+.main-h2 {
+    text-align: center;
+    font-family: "Zen Antique", self;
+    font-size: 40px;
+    margin-top: 40px;
+}
+.main-p1 {
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 40px;
+}
+.main-contents {
+    margin-top: 40px;
+}
+.main-text {
+    margin: 0 40px;
+    margin-top: 40px;
+}
+.main-text .p2 {
+    font-size: 17px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 7px;
+    line-height: 21px;
+}
+.main-text .p3 {
+    line-height: 21px;
+    margin-top: 40px;
+}
+.main-text .button-back {
+    width: 60px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+    padding: 2px;
+}
+.slides {
+    display: flex;
+    overflow-x: hidden;
+}
+.slides div {
+    display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 100%;
+}
+.slides img {
+    width: 100%;
+}
+.slides-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.slides-button a {
+    width: 19%;
+}
+.slides-button a img {
+    width: 100%;
+}
+
+/*iPadの画面サイズ*/
+@media screen and (min-width:600px){
+/*mainブロックの設定*/
+    .main-contents {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px 1fr 40px;
+    }
+    .owl-slider {
+        grid-column: 2;
+    }
+    .main-text {
+        grid-column: 4;
+        margin: 0;
+    }
+}

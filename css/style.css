@@ -1,0 +1,570 @@
+/*iPhoneおよび共通設定*/
+/*headerブロックの設定*/
+body {
+    font-family: "Zen Kaku GVothic New", sans-self;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgb(0,0,0,0.5);
+    display: flex;
+}
+.header h1 {
+    color: #fff;
+    font-size: 25px;
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    font-family: 'Train One', cursive;
+}
+/*videoブロックの設定*/
+video {
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+/*Bird Watching設定*/
+.announce {
+    margin-top: 90px;
+    text-align: center;
+}
+.announce h3 {
+    font-family: "Zen Antique", self;
+    font-size: 30px;
+}
+.announce p {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+/*gallery設定*/
+.gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery img {
+    width: 100%;
+}
+.gallery .gallery-item:nth-child(4) {
+    grid-column: 1 /3;
+}
+.gallery .gallery-item:nth-child(5) {
+    grid-column: 3;
+    grid-row: 2 / 4;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    margin-top: -2px;
+}
+.gallery-item .gallery-effect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+.gallery-item .gallery-effect .caption {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+}
+.gallery-item .gallery-effect:hover {
+    opacity: 1;
+    padding-top: 70px;
+}
+/*リンク　観察設定*/
+.link-btn {
+    margin-top: 70px;
+}
+.link-btn p {
+    width: 150px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.link-btn p::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+.link-btn p:hover::before {
+    transform: translateX(0);
+}
+.link-btn p a {
+    text-decoration: none;
+    color: #000;
+}
+.link-btn p a:hover {
+    color: #fff;
+}
+/*ハンバーガーメニュー設定*/
+.hamburger-menu {
+    position: relative;
+}
+.menu-btn {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    height: 35px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.menu-btn span, .menu-btn span::before, .menu-btn span::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+}
+.menu-btn span::before {
+    bottom: 8px;
+}
+.menu-btn span::after {
+    top: 8px;
+}
+#menu-btn-check:checked + .menu-btn span {
+    background-color: rgb(255,255,255,0);
+}
+#menu-btn-check:checked + .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked + .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 80%;
+    height: 60%;
+    margin-left: 20%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 4;
+    background-color: #20b2aa;
+}
+.menu-content ul {
+    padding-top: 50px;
+}
+.menu-content ul li {
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 0 10px 20px;
+}
+.menu-content ul li a:hover {
+    background-color: #000;
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;
+}
+/*野鳥観察会のお知らせの設定*/
+.watching {
+    display: grid;
+    margin: 40px 30px 0 30px;
+    row-gap: 20px;
+}
+.watching .watch {
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    column-gap: 20px;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+}
+.watching .watch .watch-photo img {
+    width: 100%;
+}
+.watching .watch .watch-text p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+.watching .watch .watch-text a {
+    text-decoration: none;
+    color: #000;
+}
+.watching .watch .watch-text .more {
+    margin-top: 10px;
+    text-align: end;
+}
+/*lifeの設定*/
+.life {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 50px;
+}
+.life-photo {
+    overflow: hidden;
+}
+.life-photo img {
+    display: block;
+    transition-duration: 0.5s;
+}
+.life-photo img:hover {
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.5s;
+}
+.life .life-item img {
+    width: 100%;
+}
+.life .life-p1, .life-p2 {
+    font-size: 12px;
+    color: #fff;
+    padding: 6px;
+    background-color: #000;
+    margin-top: 1px;
+}
+.life-p1:hover {
+    color: #aaa;
+}
+.life .life-p2 {
+    margin-top: 1px;
+    color: #ccc;
+}
+/*季節の野鳥の設定*/
+.fade {
+    position: relative;
+    margin-top: 90px;
+    transition: all 2s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+}
+.fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.fade img {
+    width: 100%;
+}
+.fade .fade-text {
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.season {
+    margin-top: 10px;
+}
+.season .season-photo {
+    overflow: hidden;
+}
+.season img {
+    width: 100%;
+    display: block;
+    transition-duration: 0.5s;
+}
+.season img:hover {
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.5s;
+}
+.season .season-item {
+    position: relative;
+}
+.season .season-p1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    padding: 4px 0 4px 10px;
+    color: #fff;
+    background-color: #3549B7;
+}
+.season .season-p2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 0;
+    text-indent: 10px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+/*mainブロックの設定*/
+.main {
+    margin-top: 100px;
+}
+.main-h2 {
+    text-align: center;
+    font-family: "Zen Antique", self;
+    font-size: 40px;
+    margin-top: 40px;
+}
+.main-p1 {
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 40px;
+}
+.main-contents {
+    margin-top: 40px;
+}
+.main-text {
+    margin: 0 40px;
+    margin-top: 40px;
+}
+.main-text .p2 {
+    font-size: 17px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 7px;
+    line-height: 21px;
+}
+.main-text .p3 {
+    line-height: 21px;
+    margin-top: 40px;
+}
+.main-text .button-back {
+    width: 60px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+
+.slides {
+    display: flex;
+    overflow-x: hidden;
+}
+.slides div {
+    display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 100%;
+}
+.slides img {
+    width: 100%;
+}
+.slides-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.slides-button a {
+    width: 19%;
+}
+.slides-button a img {
+    width: 100%;
+}
+
+
+/*SNSおよびfooterブロック*/
+.SNS {
+    width: 100%;
+}
+.SNS .SNS-logo {
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    margin-top: 40px;
+}
+.SNS .SNS-logo img {
+    width: 100%;
+}
+.SNS .SNS-logo a {
+    display: block;
+    width: 15%;
+}
+
+footer {
+    background-color: #ccc;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+footer .footer-title {
+    padding: 5px 0 5px 40px;
+    background-color: #000;
+    font-size: 18px;
+    color: #fff;
+}
+footer .footer-text {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    margin-top: 10px;
+    gap: 2px 0;
+}
+.footer-text p {
+    grid-column: 2;
+    font-size: 15px;
+    }
+.footer-text p a {
+    text-decoration: none;
+    color: #000;
+}
+.footer-text p a:hover {
+    color: #fff;
+}
+
+
+/*iPadの画面サイズ*/
+@media screen and (min-width:376px){
+/*headerブロックの設定*/
+    .header h1 {
+        font-size: 30px;
+    }
+/*garallyブロックの設定*/
+.gallery {
+    grid-template-columns: repeat(5, 1fr);
+}
+.gallery .gallery-item:nth-child(6) {
+    grid-column: 4;
+    grid-row: 1;
+}
+.gallery .gallery-item:nth-child(7) {
+    grid-column: 5;
+    grid-row: 1;
+}
+/*野鳥観察会の設定*/
+.watching  {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+}
+/*lifeの設定*/
+.life {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* 季節の野鳥の設定 */
+.season {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*mainブロックの設定*/
+    .main-contents {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px 1fr 40px;
+    }
+    .owl-slider {
+        grid-column: 2;
+    }
+    .main-text {
+        grid-column: 4;
+        margin: 0;
+    }
+    
+/*SNSおよびfooterブロック*/
+    .SNS .SNS-logo {
+        width: 45%;
+    }
+    footer .footer-text {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-left: 40px
+    }
+    .footer-text p {
+        grid-column: auto;
+    }
+}
+/*PCの画面サイズ*/
+@media screen and (min-width:787px) {
+/*headerブロックの設定*/
+    .menu-content {
+        left: 0;
+        top: 10px;
+        width: 60%;
+        height: auto;
+        margin-left: 40%;
+        background-color: transparent;
+    }
+    .menu-content ul {
+        padding-top: 0;
+        display: flex;
+    }
+    .menu-content ul li {
+        width: 19%;
+    }
+    .menu-content ul li a {
+        padding-left: 0;
+        text-align: center;
+        height: auto;
+    }
+    .menu-btn {
+        display: none;
+    }
+    
+/*SNSおよびfooterブロック*/
+    footer .footer-text {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-left: 40px
+    }
+    .main-contents, .SNS, footer {
+        margin-top: 70px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
